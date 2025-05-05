@@ -5,8 +5,9 @@ import java.util.List;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.angel.springboot.di.app.springboot_di.models.Product;
-import com.angel.springboot.di.app.springboot_di.services.ProductServicesImpl;
+import com.angel.springboot.di.app.springboot_di.services.IProductServices;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,7 +17,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 public class SomeController {
 
-    private ProductServicesImpl services = new ProductServicesImpl();
+    @Autowired
+
+    private IProductServices services;
 
     @GetMapping
 
