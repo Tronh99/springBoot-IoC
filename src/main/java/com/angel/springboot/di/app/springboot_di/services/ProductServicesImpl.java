@@ -4,18 +4,23 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import com.angel.springboot.di.app.springboot_di.models.Product;
 import com.angel.springboot.di.app.springboot_di.repositories.IProductRepository;
 
 
-@Component
+@Service
 public class ProductServicesImpl implements IProductServices {
 
 
-    @Autowired
+    // @Autowired
     private IProductRepository repository;
+    @Autowired
+    public void setRepository(IProductRepository repository) {
+        this.repository = repository;
+    }
+    
 
     @Override
     public List<Product> findAll() {
@@ -33,5 +38,6 @@ public class ProductServicesImpl implements IProductServices {
     public Product findById(Long id) {
         return repository.findById(id);
     }
+
 
 }
