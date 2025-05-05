@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import com.angel.springboot.di.app.springboot_di.models.Product;
@@ -17,7 +18,7 @@ public class ProductServicesImpl implements IProductServices {
     // @Autowired
     private IProductRepository repository;
     @Autowired
-    public void setRepository(IProductRepository repository) {
+    public void setRepository(@Qualifier("productList") IProductRepository repository) {
         this.repository = repository;
     }
     

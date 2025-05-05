@@ -3,13 +3,12 @@ package com.angel.springboot.di.app.springboot_di.repositories;
 import java.util.Arrays;
 import java.util.List;
 
-import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Repository;
 
 import com.angel.springboot.di.app.springboot_di.models.Product;
 
-@Primary
-@Repository
+
+@Repository("productList")
 public class ProductRepositoryImpl implements IProductRepository {
 
     private List<Product> data;
