@@ -21,7 +21,7 @@ public class ProductServicesImpl implements IProductServices {
     private Environment environment;
     private IProductRepository repository;
     @Autowired
-    public void setRepository(@Qualifier("productList") IProductRepository repository) {
+    public void setRepository(@Qualifier("productJson") IProductRepository repository) {
         this.repository = repository;
     }
     
